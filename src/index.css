@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg border border-gray-700/50 shadow-2xl;
+  }
+  
+  .metric-card {
+    @apply glass-card rounded-3xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-3xl;
+  }
+  
+  .sparkline-container {
+    @apply bg-gray-900/50 rounded-xl p-4 transition-all duration-300 hover:bg-gray-800/50;
+  }
+  
+  .stat-card {
+    @apply backdrop-blur-lg rounded-2xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
